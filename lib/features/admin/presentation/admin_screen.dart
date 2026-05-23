@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+
+/// Admin panel for exam and content management — expand with Firestore CRUD.
+class AdminScreen extends StatelessWidget {
+  const AdminScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('অ্যাডমিন')),
+      body: const Center(
+        child: Text('পরীক্ষা ও কন্টেন্ট ম্যানেজমেন্ট শীঘ্যই আসছে'),
+      ),
+    );
+  }
+}
