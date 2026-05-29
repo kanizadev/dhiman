@@ -79,6 +79,38 @@ Add SHA-1/SHA-256 fingerprints in Firebase Console → Project Settings → Your
 | Backend | Firebase Auth, Firestore, Storage, FCM |
 | Charts | fl_chart |
 
+## Backend API (Cloud Functions)
+
+This repo now includes a full Firebase backend scaffold in `functions/`:
+
+- `api` HTTPS function (Express) with routes:
+  - `GET /health`
+  - `GET /users/me` (authenticated)
+  - `PATCH /users/me` (authenticated)
+  - `GET /users` (admin)
+  - `PATCH /users/:uid/role` (admin)
+- `createUserProfile` Auth trigger to auto-create `users/{uid}` on signup.
+
+### Backend Setup
+
+```bash
+cd functions
+npm install
+npm run build
+```
+
+From project root:
+
+```bash
+npx -y firebase-tools@latest emulators:start --only functions
+```
+
+Or deploy:
+
+```bash
+npx -y firebase-tools@latest deploy --only functions
+```
+
 ## License
 
 Private — educational use.
